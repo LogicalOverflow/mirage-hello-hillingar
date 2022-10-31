@@ -1,3 +1,3 @@
 # mirage-hello-hillingar
 
-See https://github.com/RyanGibb/hillingar/
+See [RyanGibb/hillingar/](https://github.com/RyanGibb/hillingar/)
