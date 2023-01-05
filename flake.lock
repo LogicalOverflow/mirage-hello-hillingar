@@ -45,6 +45,21 @@
         "type": "github"
       }
     },
+    "flake-utils_3": {
+      "locked": {
+        "lastModified": 1638122382,
+        "narHash": "sha256-sQzZzAbvKEqN9s0bzWuYmRaA03v40gaJ4+iL1LXjaeI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "74f7e4319258e287b0f9cb95426c9853b282730b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "hillingar": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -52,7 +67,9 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "opam-nix": "opam-nix",
+        "opam-nix": [
+          "opam-nix"
+        ],
         "opam-overlays": [
           "opam-overlays"
         ],
@@ -62,15 +79,15 @@
         "opam2json": "opam2json"
       },
       "locked": {
-        "lastModified": 1672678809,
-        "narHash": "sha256-jxffXGeok1zoU7TnB0W8MmgalME2/2IQWCGQ5OSHLsg=",
-        "owner": "RyanGibb",
+        "lastModified": 1672959105,
+        "narHash": "sha256-oHkGmbgMcb+eutqfh90ZfEuIYTp1DFFb4koJjFaLo4k=",
+        "owner": "LogicalOverflow",
         "repo": "hillingar",
-        "rev": "3876e7ca88d9945449d2a69eaf1cf41070e2d80a",
+        "rev": "ea3f7eafc2dd8b3574f7eb68172035dc3fc2e229",
         "type": "github"
       },
       "original": {
-        "owner": "RyanGibb",
+        "owner": "LogicalOverflow",
         "repo": "hillingar",
         "type": "github"
       }
@@ -125,38 +142,31 @@
     "opam-nix": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "flake-utils": [
-          "hillingar",
-          "flake-utils"
+        "flake-utils": "flake-utils_3",
+        "mirage-opam-overlays": [
+          "mirage-opam-overlays"
         ],
-        "mirage-opam-overlays": "mirage-opam-overlays",
         "nixpkgs": [
-          "hillingar",
           "nixpkgs"
         ],
         "opam-overlays": [
-          "hillingar",
           "opam-overlays"
         ],
         "opam-repository": [
-          "hillingar",
           "opam-repository"
         ],
-        "opam2json": [
-          "hillingar",
-          "opam2json"
-        ]
+        "opam2json": "opam2json_2"
       },
       "locked": {
-        "lastModified": 1663858382,
-        "narHash": "sha256-rpYaFnIcO65+2yDz5gwIG93b1etA6lE0hxqLaMIzDao=",
-        "owner": "tweag",
+        "lastModified": 1672958874,
+        "narHash": "sha256-Q7S4UwecEUDYfIg7zvYlXjmc5nqa/rE0rdghVpE6J4g=",
+        "owner": "LogicalOverflow",
         "repo": "opam-nix",
-        "rev": "ea5924dcde987f116719d9a0083f44d87b4010d0",
+        "rev": "a7a4c25458c8c431f80b2e2319db8e486b529923",
         "type": "github"
       },
       "original": {
-        "owner": "tweag",
+        "owner": "LogicalOverflow",
         "repo": "opam-nix",
         "type": "github"
       }
@@ -214,11 +224,34 @@
         "type": "github"
       }
     },
+    "opam2json_2": {
+      "inputs": {
+        "nixpkgs": [
+          "opam-nix",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1665671715,
+        "narHash": "sha256-7f75C6fIkiLzfkwLpJxlQIKf+YORGsXGV8Dr2LDDi+A=",
+        "owner": "tweag",
+        "repo": "opam2json",
+        "rev": "32fa2dcd993a27f9e75ee46fb8b78a7cd5d05113",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tweag",
+        "repo": "opam2json",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "hillingar": "hillingar",
+        "mirage-opam-overlays": "mirage-opam-overlays",
         "nixpkgs": "nixpkgs",
+        "opam-nix": "opam-nix",
         "opam-overlays": "opam-overlays",
         "opam-repository": "opam-repository"
       }

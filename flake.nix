@@ -1,9 +1,16 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
-    hillingar.url = "github:RyanGibb/hillingar";
+    hillingar.url = "github:LogicalOverflow/hillingar";
+
+    opam-nix.url = "github:LogicalOverflow/opam-nix";
+    opam-nix.inputs.nixpkgs.follows = "nixpkgs";
+    opam-nix.inputs.opam-repository.follows = "opam-repository";
+    opam-nix.inputs.opam-overlays.follows = "opam-overlays";
+    opam-nix.inputs.mirage-opam-overlays.follows = "mirage-opam-overlays";
 
     # use different repositories to those pinned in hillingar
+    hillingar.inputs.opam-nix.follows = "opam-nix";
     hillingar.inputs.opam-repository.follows = "opam-repository";
     hillingar.inputs.opam-overlays.follows = "opam-overlays";
     opam-repository = {
@@ -12,6 +19,10 @@
     };
     opam-overlays = {
       url = "github:dune-universe/opam-overlays";
+      flake = false;
+    };
+    mirage-opam-overlays = {
+      url = "github:dune-universe/mirage-opam-overlays";
       flake = false;
     };
 
